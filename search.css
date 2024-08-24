@@ -1,0 +1,52 @@
+/* Global Variables */
+:root {
+    --main-color: blue;
+    --padding-size: 10px;
+}
+
+body {
+    color: var(--main-color);
+    padding: var(--padding-size);
+}
+/*  Local Variables*/
+.container {
+    --main-color: green;
+    background-color: var(--main-color);
+}
+
+.button {
+    background-color: var(--main-color); /* This will not work if --main-color is only defined in .container */
+}
+  ////////////
+  body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #222;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  /////
+
+  /*Examples of Vendor Prefixes*/
+  transition: all 0.3s ease;
+
+  /* Vendor-prefixed versions */
+  -webkit-transition: all 0.3s ease; /* Chrome, Safari */
+  -moz-transition: all 0.3s ease;    /* Firefox */
+  -o-transition: all 0.3s ease;      /* Opera */
+  -ms-transition: all 0.3s ease;     /* Internet Explorer */

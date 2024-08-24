@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Accusoft</h2>
+        <ul>
+            <li><a href="#" id="dashboardBtn"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#" id="customersBtn"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="#" id="projectsBtn"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#" id="ordersBtn"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+            <li><a href="#" id="inventoryBtn"><i class="fas fa-boxes"></i> Inventory</a></li>
+            <li><a href="#" id="accountsBtn"><i class="fas fa-file-invoice"></i> Accounts</a></li>
+            <li><a href="#" id="tasksBtn"><i class="fas fa-tasks"></i> Tasks</a></li>
+        </ul>
+  
+</div>
+    <div class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search here...">
+            </div>
+            <div class="user-info">
+                <span>John Doe</span>
+                <span>Super admin</span>
+            </div>
+        </header>
+    
+        <div class="stats">
+            <div class="stat-card" id="statCustomers">
+                <h3>Customers</h3>
+                <p>54</p>
+            </div>
+            <div class="stat-card" id="statProjects">
+                <h3>Projects</h3>
+                <p>79</p>
+            </div>
+            <div class="stat-card" id="statOrders">
+                <h3>Orders</h3>
+                <p>124</p>
+            </div>
+            <div class="stat-card" id="statIncome">
+                <h3>Income</h3>
+                <p>$6k</p>
+            </div>
+        </div>
+
+        <div class="projects-section">
+            <h3>Recent Projects</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project Title</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UI/UX Design</td>
+                            <td>UI Team</td>
+                            <td><span class="status-dot status-review"></span>Review</td>
+                        </tr>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>Frontend</td>
+                            <td><span class="status-dot status-inprogress"></span>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App</td>
+                            <td>Mobile Team</td>
+                            <td><span class="status-dot status-pending"></span>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+    </div>
+    
+   
+    <!-- Include JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

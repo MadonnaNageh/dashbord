@@ -1,0 +1,32 @@
+/* Vendor-prefixed styles for compatibility */
+.box {
+    -webkit-border-radius: 10px; /* Chrome, Safari */
+    -moz-border-radius: 10px;    /* Firefox */
+    -ms-border-radius: 10px;     /* Internet Explorer */
+    border-radius: 10px;         /* Standard syntax */
+    
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Chrome, Safari */
+    -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    /* Firefox */
+    -ms-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);     /* Internet Explorer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);         /* Standard syntax */
+  }
+  .outer {
+    margin-top: 30px;
+    background-color: lightgray;
+  }
+  .inner {
+    margin-top: 20px;
+    background-color: lightblue;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  

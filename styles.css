@@ -1,0 +1,300 @@
+/* ضبط إعدادات الجسم لمنع ظهور شريط التمرير الأفقي */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  overflow-x: hidden; /* منع التمرير الأفقي */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ff5f5f;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto; /* السماح بالتمرير العمودي إذا كان المحتوى أطول من الشاشة */
+  box-sizing: border-box;
+}
+
+
+
+.sidebar h2 {
+  text-align: center; /* محاذاة النص في المنتصف */
+  margin-bottom: 30px; /* ضبط المسافة السفلية */
+  color: white; /* لون النص */
+  font-size: 24px; /* حجم الخط */
+  font-weight: bold; /* جعل الخط عريض */
+  letter-spacing: 2px; /* ضبط التباعد بين الحروف */
+  text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+}
+
+
+
+
+
+
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  box-sizing: border-box; /* التأكد من احتساب الـ padding ضمن العرض */
+  overflow-x: hidden; /* منع التمرير الأفقي */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 22%; /* تأكد من أن العرض أقل من 25% لتجنب التمرير الأفقي */
+  min-width: 200px; /* وضع حد أدنى للعرض لضمان تجنب التكسير على الشاشات الصغيرة */
+  text-align: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.stat-card:hover {
+  background-color: #ffe5e5;
+  transform: scale(1.05);
+}
+
+.projects-section, .new-customers {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow-x: auto; /* السماح بالتمرير الأفقي إذا كان المحتوى كبيرا */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #f4f4f4;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1024px) {
+  .main-content {
+      margin-left: 0;
+      width: 100%;
+      padding: 15px;
+  }
+
+  .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+  }
+
+  .stats {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .stat-card {
+      width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .stats {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .stat-card {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar ul li {
+      margin: 10px 0;
+  }
+
+  .projects-section, .new-customers {
+      padding: 15px;
+  }
+
+  .stat-card p {
+      font-size: 20px;
+  }
+
+  .stat-card h3 {
+      font-size: 18px;
+  }
+}
+
+.sidebar ul {
+  list-style-type: none; /* إزالة النقاط من القائمة */
+  padding: 0;
+  margin: 0; /* إزالة الهامش */
+}
+
+.sidebar ul li {
+  margin: 15px 0; /* ضبط المسافة بين العناصر */
+}
+
+.sidebar ul li a {
+  color: white; /* لون النص */
+  text-decoration: none; /* إزالة التسطير من النص */
+  display: flex; /* استخدام flexbox لعرض الأيقونة والنص بجانب بعض */
+  align-items: center; /* محاذاة النص والأيقونة عموديًا في الوسط */
+  padding: 10px 15px; /* ضبط التباعد الداخلي */
+  background-color: transparent; /* لون الخلفية الافتراضي */
+  border-radius: 5px; /* جعل الزوايا مستديرة */
+  transition: background-color 0.3s, box-shadow 0.3s; /* تأثير عند التمرير أو النقر */
+  font-size: 16px; /* حجم الخط */
+}
+
+.sidebar ul li a i {
+  margin-right: 10px; /* مسافة بين الأيقونة والنص */
+  font-size: 18px; /* حجم الأيقونة */
+}
+
+.sidebar ul li a:hover {
+  background-color: #ff4f4f; /* تغيير لون الخلفية عند التمرير */
+  box-shadow: 0px 0px 15px rgba(255, 79, 79, 0.7); /* إضافة ظل عند التمرير */
+}
+
+.sidebar ul li a.active {
+  background-color: #ff4f4f; /* لون الخلفية عند التفعيل (العنصر النشط) */
+  box-shadow: 0px 0px 15px rgba(255, 79, 79, 0.7); /* ظل للعنصر النشط */
+}
+
+
+top-header {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #333; /* لون الخلفية للرأس العلوي */
+  display: flex;
+  justify-content: flex-end; /* محاذاة المحتوى إلى اليمين */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للرأس */
+}
+
+
+
+
+
+
+
+
+
+
+
+.projects-section {
+  background-color: #fff; /* لون خلفية المربع */
+  padding: 20px; /* التباعد الداخلي */
+  border-radius: 10px; /* جعل الزوايا مستديرة */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  margin-bottom: 20px; /* المسافة السفلية */
+  overflow-x: auto; /* السماح بالتمرير الأفقي إذا كان العرض ضيقًا */
+}
+
+.projects-section h3 {
+  font-size: 20px; /* حجم خط العنوان */
+  font-weight: bold; /* جعل الخط عريض */
+  margin-bottom: 15px; /* المسافة السفلية للعنوان */
+  color: #333; /* لون العنوان */
+}
+
+.table-container {
+  overflow-x: auto; /* تمكين التمرير الأفقي إذا كان الجدول كبيرًا */
+}
+
+table {
+  width: 100%; /* جعل عرض الجدول يتناسب مع عرض المربع */
+  border-collapse: collapse; /* إزالة المسافات بين خلايا الجدول */
+  text-align: left; /* محاذاة النصوص إلى اليسار */
+}
+
+table th, table td {
+  padding: 12px 15px; /* التباعد داخل الخلايا */
+  border-bottom: 1px solid #ddd; /* إضافة خط تحت كل خلية */
+}
+
+table th {
+  background-color: #f9f9f9; /* لون خلفية رؤوس الجدول */
+  color: #555; /* لون النص في رؤوس الجدول */
+  font-weight: bold; /* جعل النص عريض */
+  font-size: 16px; /* حجم الخط في رؤوس الجدول */
+}
+
+table td {
+  font-size: 14px; /* حجم الخط في خلايا الجدول */
+  color: #666; /* لون النص في الخلايا */
+}
+
+table tr:hover {
+  background-color: #f1f1f1; /* تغيير لون الخلفية عند التمرير فوق الصفوف */
+  transition: background-color 0.3s; /* إضافة تأثير سلس عند التمرير */
+}
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-pending {
+  background-color: #ffa500; /* لون النقطة للحالة "Pending" */
+}
+
+.status-inprogress {
+  background-color: #00f; /* لون النقطة للحالة "In Progress" */
+}
+
+.status-review {
+  background-color: #ff4500; /* لون النقطة للحالة "Review" */
+}
+
+
+
+
+
+
+
